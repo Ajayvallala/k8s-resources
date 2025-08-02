@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Configmap
+metadata: 
+ name: pod-config
+ labels:
+  purpose: configmap-demo
+data:
+ COURSE: "Kubernetes"
+ TRAINER: "sivakumar"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: config-pod
+spec:
+ containers:
+ - name: configmap-demo
+   image: nginx
+   envFrom:
+   - configMapRef:
+     name: pod-config
