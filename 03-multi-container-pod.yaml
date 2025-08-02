@@ -9,6 +9,6 @@ spec:
   - name: pod1
     image: nginx
   - name: pod2
-    image: almalinx
+    image: almalinux
 
      
