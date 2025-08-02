@@ -10,5 +10,6 @@ spec:
     image: nginx
   - name: pod2
     image: almalinux
+    command: ["sleep","1000"]
 
      
