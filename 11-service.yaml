@@ -8,10 +8,10 @@ spec:
  selector:
   project: roboshop
   env: dev
-  ports:
-  - protocal: TCP
-    port: 80
-    targetport: 80
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 80
 
 ---
 
