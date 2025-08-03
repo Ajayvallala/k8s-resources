@@ -7,15 +7,15 @@ metadata:
 spec:
  replicas: 3
  selector:
-  matchlabels:
+  matchLabels:
    project: roboshop
    env: dev
-template:
- metadata:
-  labels:
-   project: roboshop
-   env: dev
- spec:
-  containers:
-  - name: nginx
-    image: nginx
+ template:
+  metadata:
+   labels:
+    project: roboshop
+    env: dev
+  spec:
+   containers:
+   - name: nginx
+     image: nginx
