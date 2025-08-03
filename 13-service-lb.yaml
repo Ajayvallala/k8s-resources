@@ -9,10 +9,10 @@ spec:
  selector:
   project: roboshop
   env: dev
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 80
 
 ---
 apiVersion: v1
@@ -26,4 +26,4 @@ spec:
  containers:
  - name: lb-pod
    image: nginx
-   
+
