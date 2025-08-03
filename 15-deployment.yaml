@@ -19,6 +19,6 @@ spec:
   spec:
    containers:
    - name: nginx-dp
-     image: nginx
+     image: nginx:1.14.2
    
   
