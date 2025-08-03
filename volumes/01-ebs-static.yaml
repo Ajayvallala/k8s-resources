@@ -59,7 +59,6 @@ metadata:
 spec:
  type: LoadBalancer
  selector:
-  matchLabels:
    purpose: ebs-static-demo
  ports:
  - protocol: TCP
