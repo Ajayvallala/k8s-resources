@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: PersistantVolume
+metadata:
+ name: efs-static
+ labels:
+  purpose: efs-satic-demo
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-018a24fe769f4807b
+  
+---
+
+apiVersion: v1 
+kind: PersistentVolumeClaim
+metadata:
+ name: efs-static
+ labels:
+  purpose: efs-static-demo
+spec:
+ volumeName: efs-static
+ accessModes:
+ - ReadWriteOnce
+ capacity:
+  storage: 5Gi
+ resources:
+  requests: 
+   storage: 5Gi
+
+
+
