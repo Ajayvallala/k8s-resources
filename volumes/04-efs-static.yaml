@@ -28,11 +28,45 @@ spec:
  volumeName: efs-static
  accessModes:
  - ReadWriteOnce
- capacity:
-  storage: 5Gi
  resources:
   requests: 
    storage: 5Gi
+
+--- 
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: efs-pod
+ labels:
+  purpose: efs-satic-demo
+spec:
+ containers:
+ - name: nginx-efs
+   image: nginx
+   volumeMounts:
+   - name: efs-static
+   mountPath: /usr/share/nginx/html
+
+ volumes:
+ - name: efs-static
+   persistentVolumeClaim:
+    claimName: efs-static
+
+---
+
+apiVersion: v1 
+kind: Service
+metadata:
+ name: efs-static
+spec:
+ type: LoadBalancer
+ selector:
+  purpose: efs-satic-demo
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 80
 
 
 
