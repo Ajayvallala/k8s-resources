@@ -3,7 +3,7 @@ kind: PersistantVolume
 metadata:
  name: efs-static
  labels:
-  purpose: efs-satic-demo
+  purpose: efs-static-demo
 spec:
   capacity:
    storage: 5Gi
@@ -13,8 +13,8 @@ spec:
   storageClassName: ""
   persistentVolumeReclaimPolicy: Retain
   csi:
-    driver: efs.csi.aws.com
-    volumeHandle: fs-018a24fe769f4807b
+   driver: efs.csi.aws.com
+   volumeHandle: fs-018a24fe769f4807b
   
 ---
 
