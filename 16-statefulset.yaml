@@ -37,10 +37,10 @@ spec:
      volumeMounts:
      - name: ebs-provisioner
        mountPath: /usr/share/nginx/html
-   volumes:
-   - name: ebs-provisioner
-     persistentVolumeClaim:
-      claimName: statefulset-pvc
+ volumes:
+ - name: ebs-provisioner
+   persistentVolumeClaim:
+    claimName: statefulset-pvc
 
 --- 
 
