@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-http
+spec:
+  containers:
+  - name: liveness
+    image: nginx
+    livenessProbe:
+      tcpSocket:  #Checks ports 80 is opened or not
+        port: 80
+      initialDelaySeconds: 30
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:  # send http requests 
+        path: /
+        port: 80
+      initialDelaySeconds: 40
+      periodSeconds: 3
